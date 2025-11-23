@@ -12,7 +12,6 @@
         --additional: #134686;
         --dark: #222;
       }
-
       html,
       body {
         height: 100%;
@@ -23,7 +22,6 @@
         align-items: center;
         justify-content: center;
       }
-
       .calculator {
         width: 360px;
         background: linear-gradient(180deg, #fff 0%, #f8f2e8 100%);
@@ -31,63 +29,33 @@
         box-shadow: 0 10px 30px rgba(19, 70, 134, 0.12);
         padding: 18px;
       }
-
-      .calc-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-      }
-
-      .calc-title {
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #666;
-      }
-
-      .calc-indicator {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: var(--second);
-        box-shadow: 0 0 0 4px rgba(237, 63, 39, 0.2);
-      }
-
       .display {
         background: var(--additional);
         color: #fff;
         border-radius: 10px;
-        padding: 16px 14px;
+        padding: 12px 16px;
         text-align: right;
-        font-size: 36px;
+        font-size: 34px;
         line-height: 1;
-        min-height: 64px;
+        min-height: 68px;
         box-shadow: inset 0 -6px 18px rgba(0, 0, 0, 0.12);
         overflow: hidden;
-        word-wrap: break-word;
       }
-
       .subdisplay {
-        font-size: 12px;
-        opacity: 0.85;
+        font-size: 13px;
+        opacity: 0.9;
         color: #e8f0ff;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
       }
-
-      .display-main {
-        font-size: 32px;
-        font-weight: 500;
+      .mainValue {
+        font-family: monospace;
       }
-
       .keys {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
         margin-top: 14px;
       }
-
       button {
         padding: 14px;
         font-size: 18px;
@@ -95,15 +63,13 @@
         border: none;
         cursor: pointer;
         box-shadow: 0 6px 12px rgba(19, 70, 134, 0.08);
-        transition: transform 0.06s ease, box-shadow 0.06s ease,
-          background 0.1s linear;
+        transition: transform 0.06s ease, box-shadow 0.06s ease;
         user-select: none;
       }
       button:active {
         transform: translateY(2px);
         box-shadow: none;
       }
-
       .btn-num {
         background: #fff;
         color: var(--dark);
@@ -115,6 +81,7 @@
       .btn-eq {
         background: var(--third);
         color: #111;
+        grid-row: span 2;
       }
       .btn-clear {
         background: #b71c1c;
@@ -124,12 +91,9 @@
         background: #fff;
         color: var(--dark);
       }
-
       .btn-wide {
         grid-column: span 2;
       }
-
-      /* responsive */
       @media (max-width: 420px) {
         .calculator {
           width: 320px;
@@ -138,9 +102,6 @@
         .display {
           font-size: 30px;
           min-height: 56px;
-        }
-        .display-main {
-          font-size: 28px;
         }
       }
     </style>
@@ -151,182 +112,39 @@
       role="application"
       aria-label="Kalkulator Interaktif"
     >
-      <header class="calc-header">
-        <div class="calc-title">Kalkulator</div>
-        <div class="calc-indicator" aria-hidden="true"></div>
-      </header>
-
       <div class="display" id="display">
         <div class="subdisplay" id="subdisplay"></div>
-        <div id="mainValue" class="display-main">0</div>
+        <div class="mainValue" id="mainValue">0</div>
       </div>
 
       <div class="keys" id="keys" aria-hidden="false">
-        <!-- baris 1 -->
         <button class="btn-clear" data-action="clearAll">C</button>
         <button class="btn-clear" data-action="clearEntry">CE</button>
         <button class="btn-op" data-action="operator" data-value="÷">÷</button>
         <button class="btn-op" data-action="operator" data-value="×">×</button>
 
-        <!-- baris 2 -->
         <button class="btn-num" data-action="digit" data-value="7">7</button>
         <button class="btn-num" data-action="digit" data-value="8">8</button>
         <button class="btn-num" data-action="digit" data-value="9">9</button>
         <button class="btn-op" data-action="operator" data-value="-">−</button>
 
-        <!-- baris 3 -->
         <button class="btn-num" data-action="digit" data-value="4">4</button>
         <button class="btn-num" data-action="digit" data-value="5">5</button>
         <button class="btn-num" data-action="digit" data-value="6">6</button>
         <button class="btn-op" data-action="operator" data-value="+">+</button>
 
-        <!-- baris 4 -->
         <button class="btn-num" data-action="digit" data-value="1">1</button>
         <button class="btn-num" data-action="digit" data-value="2">2</button>
         <button class="btn-num" data-action="digit" data-value="3">3</button>
         <button class="btn-eq" data-action="equals">=</button>
 
-        <!-- baris 5 (rapi: 0 span 2 kolom, lalu ., =) -->
         <button class="btn-wide btn-num" data-action="digit" data-value="0">
           0
         </button>
         <button class="btn-dot" data-action="decimal" data-value=".">.</button>
-        <button class="btn-eq" data-action="equals">=</button>
       </div>
     </main>
 
-    <script>
-      const displayEl = document.getElementById("mainValue");
-      const subEl = document.getElementById("subdisplay");
-      const keys = document.getElementById("keys");
-
-      let current = "0";
-      let previous = null;
-      let op = null;
-      let waiting = false;
-
-      function updateDisplay() {
-        displayEl.textContent = current;
-        subEl.textContent = previous !== null && op ? `${previous} ${op}` : "";
-      }
-
-      function inputDigit(d) {
-        if (waiting) {
-          current = d;
-          waiting = false;
-        } else {
-          current = current === "0" ? d : current + d;
-        }
-        updateDisplay();
-      }
-
-      function inputDecimal() {
-        if (waiting) {
-          current = "0.";
-        } else if (!current.includes(".")) {
-          current += ".";
-        }
-        waiting = false;
-        updateDisplay();
-      }
-
-      function clearAll() {
-        current = "0";
-        previous = null;
-        op = null;
-        waiting = false;
-        updateDisplay();
-      }
-
-      function clearEntry() {
-        current = "0";
-        updateDisplay();
-      }
-
-      function calculate(a, b, operator) {
-        a = parseFloat(a);
-        b = parseFloat(b);
-        if (isNaN(a) || isNaN(b)) return b;
-        switch (operator) {
-          case "+":
-            return a + b;
-          case "-":
-            return a - b;
-          case "×":
-            return a * b;
-          case "÷":
-            return b === 0 ? "Error" : a / b;
-        }
-        return b;
-      }
-
-      function handleOperator(nextOp) {
-        if (op && !waiting) {
-          const result = calculate(previous, current, op);
-          current = String(result);
-          previous = result === "Error" ? null : result;
-        } else {
-          previous = parseFloat(current);
-        }
-        op = nextOp;
-        waiting = true;
-        updateDisplay();
-      }
-
-      function handleEquals() {
-        if (op == null || previous == null) return;
-        const result = calculate(previous, current, op);
-        current = String(result);
-        previous = null;
-        op = null;
-        waiting = true;
-        updateDisplay();
-      }
-
-      keys.addEventListener("click", (e) => {
-        const btn = e.target.closest("button");
-        if (!btn) return;
-        const action = btn.dataset.action;
-        const value = btn.dataset.value;
-
-        switch (action) {
-          case "digit":
-            inputDigit(value);
-            break;
-          case "decimal":
-            inputDecimal();
-            break;
-          case "operator":
-            handleOperator(value);
-            break;
-          case "equals":
-            handleEquals();
-            break;
-          case "clearAll":
-            clearAll();
-            break;
-          case "clearEntry":
-            clearEntry();
-            break;
-        }
-      });
-
-      // keyboard support (basic)
-      window.addEventListener("keydown", (e) => {
-        if (e.key >= "0" && e.key <= "9") inputDigit(e.key);
-        if (e.key === "." || e.key === ",") inputDecimal();
-        if (e.key === "+" || e.key === "-") handleOperator(e.key);
-        if (e.key === "*" || e.key.toLowerCase() === "x") handleOperator("×");
-        if (e.key === "/") handleOperator("÷");
-        if (e.key === "Enter" || e.key === "=") {
-          e.preventDefault();
-          handleEquals();
-        }
-        if (e.key === "Backspace") clearEntry();
-        if (e.key.toLowerCase() === "c") clearAll();
-      });
-
-      updateDisplay();
-    </script>
+    <script src="./calculator.js"></script>
   </body>
 </html>
