@@ -157,27 +157,6 @@ function isOperator(t) {
 }
 ```
 
-## 🐛 Troubleshooting
-
-### Masalah Umum
-
-**Q: Hasil perhitungan tidak akurat? **
-A: JavaScript menggunakan floating point.  Aplikasi sudah menggunakan `toPrecision(12)` untuk akurasi optimal.
-
-**Q:  History tidak muncul?**
-A: Pastikan melakukan perhitungan dengan operator dan equals. History hanya menyimpan hasil yang valid.
-
-**Q:  Keyboard tidak bekerja? **
-A:  Pastikan focus berada di window aplikasi. Klik area kalkulator terlebih dahulu. 
-
-### 🔍 Debug Mode
-```javascript
-// Tambahkan di console untuk debug
-console.log('Current:', current);
-console.log('Tokens:', tokens);
-console.log('History:', history);
-```
-
 ## 🤝 Kontribusi
 
 Kontribusi sangat welcome! Berikut cara berkontribusi: 
