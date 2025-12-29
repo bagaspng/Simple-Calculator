@@ -183,7 +183,7 @@ Kontribusi sangat welcome! Berikut cara berkontribusi:
 
 ## 📊 Stats
 
-![Repository Stats](https://github-readme-stats.vercel.app/api/pin/?username=bagaspng&repo=Simple-Calculator&theme=tokyonight)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api/pin/?username=bagaspng&repo=Simple-Calculator&theme=tokyonight)
 
 ---
 
