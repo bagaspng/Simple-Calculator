@@ -6,8 +6,6 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-48.9%25-f1e05a?style=flat-square&logo=javascript&logoColor=black)](https://github.com/bagaspng/Simple-Calculator)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=flat-square)](https://bagaspng.github.io/Simple-Calculator/)
 
-<img width="1389" height="761" alt="image" src="https://github.com/user-attachments/assets/0b161053-6316-4cb5-96de-d1e6900f7d9f" />
-</br>
 ## 📋 Deskripsi
 
 Simple Calculator adalah aplikasi kalkulator web yang dibuat dengan HTML, CSS, dan JavaScript murni. Aplikasi ini menampilkan antarmuka yang modern dan intuitif dengan fitur history perhitungan, mendukung operasi matematika dasar, dan responsif untuk berbagai perangkat. 
@@ -38,7 +36,7 @@ Simple Calculator adalah aplikasi kalkulator web yang dibuat dengan HTML, CSS, d
 
 ![Calculator Demo](https://github.com/user-attachments/assets/0b161053-6316-4cb5-96de-d1e6900f7d9f)
 
-**[🔗 Coba Langsung di Browser](https://bagaspng.github. io/Simple-Calculator/)**
+**[🔗 Coba Langsung di Browser](https://bagaspng.github.io/Simple-Calculator/)**
 
 ## 🛠️ Teknologi
 
