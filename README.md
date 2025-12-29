@@ -176,27 +176,14 @@ Kontribusi sangat welcome! Berikut cara berkontribusi:
 - [ ] Unit converter
 - [ ] Improve accessibility (ARIA labels)
 
-## 📄 Lisensi
-
-Project ini dilisensikan di bawah **MIT License** - lihat file [LICENSE](LICENSE) untuk detail.
-
 ## 👨‍💻 Author
 
 **Bagas PNG** ([@bagaspng](https://github.com/bagaspng))
 
-- 📧 Email:  [your-email@example.com]
-- 🌐 Portfolio: [your-portfolio-link]
-- 💼 LinkedIn: [your-linkedin-profile]
-
-## 🙏 Acknowledgments
-
-- Terima kasih kepada komunitas web development Indonesia
-- Inspirasi desain dari calculator modern apps
-- Font family menggunakan Inter, Roboto, dan Segoe UI
 
 ## 📊 Stats
 
-![Repository Stats](https://github-readme-stats.vercel.app/api/pin/? username=bagaspng&repo=Simple-Calculator&theme=tokyonight)
+![Repository Stats](https://github-readme-stats.vercel.app/api/pin/?username=bagaspng&repo=Simple-Calculator&theme=tokyonight)
 
 ---
 
