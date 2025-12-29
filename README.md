@@ -1,15 +1,13 @@
-<img width="1389" height="761" alt="image" src="https://github.com/user-attachments/assets/0b161053-6316-4cb5-96de-d1e6900f7d9f" />
-<img width="1308" height="737" alt="image" src="https://github.com/user-attachments/assets/33a01d57-724a-469a-ad46-5579a4b20a47" />
-
 # 🧮 Simple Calculator
 
 > Kalkulator web interaktif dengan antarmuka yang elegan dan fitur history perhitungan
 
-[![HTML](https://img.shields.io/badge/HTML-51. 1%25-e34c26? style=flat-square&logo=html5&logoColor=white)](https://github.com/bagaspng/Simple-Calculator)
+[![HTML](https://img.shields.io/badge/HTML-51.1%25-e34c26?style=flat-square&logo=html5&logoColor=white)](https://github.com/bagaspng/Simple-Calculator)
 [![JavaScript](https://img.shields.io/badge/JavaScript-48.9%25-f1e05a?style=flat-square&logo=javascript&logoColor=black)](https://github.com/bagaspng/Simple-Calculator)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-success? style=flat-square)](https://bagaspng.github.io/Simple-Calculator/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=flat-square)](https://bagaspng.github.io/Simple-Calculator/)
 
+<img width="1389" height="761" alt="image" src="https://github.com/user-attachments/assets/0b161053-6316-4cb5-96de-d1e6900f7d9f" />
+</br>
 ## 📋 Deskripsi
 
 Simple Calculator adalah aplikasi kalkulator web yang dibuat dengan HTML, CSS, dan JavaScript murni. Aplikasi ini menampilkan antarmuka yang modern dan intuitif dengan fitur history perhitungan, mendukung operasi matematika dasar, dan responsif untuk berbagai perangkat. 
@@ -229,7 +227,7 @@ Project ini dilisensikan di bawah **MIT License** - lihat file [LICENSE](LICENSE
 
 **⭐ Jika project ini membantu, jangan lupa beri star! **
 
-[![GitHub stars](https://img.shields.io/github/stars/bagaspng/Simple-Calculator? style=social)](https://github.com/bagaspng/Simple-Calculator/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/bagaspng/Simple-Calculator?style=social)](https://github.com/bagaspng/Simple-Calculator/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/bagaspng/Simple-Calculator?style=social)](https://github.com/bagaspng/Simple-Calculator/network/members)
 
 </div>
